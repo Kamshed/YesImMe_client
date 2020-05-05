@@ -1,7 +1,6 @@
 /* ------------ main imports ------------ */
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import { Route } from 'react-router-dom'
-import FormContext from './context/FormContext'
 
 
 /* ------------ route imports ------------ */
@@ -10,7 +9,9 @@ import Home from './components/home/Home'
 import DemoArea from './components/demo/DemoArea'
 import Features from './components/features/Features'
 import Contact from './components/contact/ContactForm'
-import {ReactComponent as WaveBackground} from './assets/waveBackground.svg'
+import Footer from './components/footer/Footer'
+import HowItWorks from './components/howItWorks/HowItWorks'
+
 
 
 /* ------------ style ------------ */
@@ -18,50 +19,38 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 
 
-export default class App extends Component {
-  state = {
-    // state obj
-  }
+export default function App() {
 
-  componentDidMount () {
-    // after mount
-  }
-
-  componentDidUpdate () {
-    // after an update to state
-  }
-
-  render () {
+ 
+  useEffect(() => { 
     
-    const contextValue = {
-      // value for context
-    }
 
+  })
 
     return (
-      
-      <FormContext.Provider value={ contextValue }>
-        
+      <div>  
         <Route
           id="navbar"
           path="/"
           component={ TheNavbar }
           />
-
         <div id="expanding-background" className="expandingBackground">
-          <Route 
+          <Route
             id="parallax"
             path="/"
             component={ Home }
             />
-          <Route
+          {/* <Route
             id="demo"
             path="/"
             component={ DemoArea }
-            />
-          {/* <span id="expanding-background" className="expandingBackground"/> */}
+            /> */}
         </div>
-        
+        <Route
+          id="how-it-works"
+          path="/"
+          component={ HowItWorks }
+          />
         <Route
           id="features"
           path="/"
@@ -72,8 +61,11 @@ export default class App extends Component {
           path="/"
           component={ Contact }
           />
-
-      </FormContext.Provider>
+        <Route
+          id="footer"
+          path="/"
+          component={ Footer }
+        />
+      </div>
     )
-  }
 }

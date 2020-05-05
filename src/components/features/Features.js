@@ -1,5 +1,6 @@
 /* ------------ main imports ------------ */
 import React, { useEffect, useState } from 'react'
+import Header from '../howItWorks/header/HowItWorksHeader'
 
 
 /* ------------ other imports ------------ */
@@ -7,7 +8,6 @@ import { uesSpring , animated } from 'react-spring/renderprops'
 import Face from './faceIcon'
 import DL from './driverLicense'
 import AgeEstimation from './ageEstimation'
-import { ReactComponent as Title } from '../../assets/Features.svg'
 
 
 /* ------------ styles ------------ */
@@ -46,27 +46,38 @@ export default function Features() {
     const [ feature, setFeature ] = useState(features[0])
 
     
+    
     /* ---------- intersection observer ---------- */
     useEffect(() => {
+        
 
-        const [...articlesToAnimate] = document.querySelectorAll("div.featureArticle") // to be animated
+        /* ---------- observer variables and options ---------- */
 
-        const options = {
-            threshold: 0.2 
-        }                                                              // options
-        const aboutSectionObserver = new IntersectionObserver((entry, observer) => {    // the observer
+        const articlesToAnimate = document.querySelectorAll(".featureArticle")  // to be animated
+        const aritcleOptions = { threshold: 0.3 }                               // options
 
-            for(let i = 0; i < entry.length; ++i) {     // loop through all observed
-                if(!entry[i].isIntersecting) return     
-                entry[i].target.classList.add("show")  // will trigger fade animation
+
+        /* ---------- observers ---------- */                                                
+        
+        const articleObserver = new IntersectionObserver((entry, observer) => {  // the observer
+            for(let i = 0; i < entry.length; ++i) {                              // loop through all observed
+                if (!entry[i].isIntersecting) return
+                entry[i].target.classList.add("show")                            // will trigger fade animation   
             }
-        }, options)
+        }, aritcleOptions)
+
+
+
+
+
+
+        /* ---------- observer triggers ---------- */ 
 
         for(let i = 0; i < articlesToAnimate.length; ++i) {
-            aboutSectionObserver.observe(articlesToAnimate[i]) // observe
+            articleObserver.observe(articlesToAnimate[i])
         }
 
-        //console.log(cursor)
+        
     })
 
     function displayFeature(e) {
@@ -74,17 +85,15 @@ export default function Features() {
     }
 
 
-
     return (
-        <section id="features-section" >
-            <div>
-                <Title id="features-title" className="featuresTitle"/>
+        <section id="features-section">
+            <div style={{ position: "relative", height: "60vh" }}>
+                <img className="featureImage faceRecognition"/>
             </div>
             <div className="featuresContainer">
-            
-                
+                <Header />
                 <div className="floatingFeaturesContainer">
-                    
+                
                     {features.map((feauture, i) => (
 
                         <animated.div key={i} data-index={i} onClick={e => displayFeature(e)} className="featureArticle">

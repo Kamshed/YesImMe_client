@@ -1,10 +1,18 @@
 #home-section {
     position: absolute;
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 
-h1 {
+h1.header {
+    color: white;
+    text-align: center;
+}
+
+.subheader {
+    font-size: 1.1rem;
+    text-align: center;
+    padding-top: 30px;
     color: white;
 }
 
@@ -13,6 +21,7 @@ header.homeHeader {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 500px;
 }
 
 /* Animated Cursor */

@@ -1,25 +1,32 @@
+html {
+    scroll-behavior: smooth;
+}
+
 h1 {
     font-size: 4rem;
 }
-
-#waveBackground {
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 1470px;
-    bottom: -3px;
-
-    path {
-        fill: #327796;
-        mix-blend-mode: multiply;
-    }
+h2 {
+    font-size: 3.5rem;
 }
+h3 {
+    font-size: 3rem;
+}
+h4 {
+    font-size: 2.5rem;
+}
+h5 {
+    font-size: 2rem;
+}
+h6 {
+    font-size: 1.5rem;
+}
+
 
 .expandingBackground {
     display: block;
-    height: 100vh;
-    width: 100%;
     background-image: linear-gradient(#0d7691, #22916f);
+    height: 85vh;
+    width: 100%;
 
     &::after { // apply background image?
         
@@ -33,3 +40,13 @@ h1 {
         transition: all 750ms ease-out;
     }
 }
+
+/* body {
+    margin: 0;
+    height: 100vh;
+}
+
+canvas {
+    display: block;
+} */
+

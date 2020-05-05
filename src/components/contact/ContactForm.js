@@ -9,7 +9,10 @@ import './Contact.css'
 export default function Contact() {
 
     return (
-        <section id="contact-section">
+        <section 
+            id="contact-section"
+            data-IO="nav" // intersection observer for navbar
+        >
             
             <Form id="contact-form" action="mailto:joshrlear@gmail.com" method="post" enctype="text/plain">
                 <Col style={{padding: "0px"}}>

@@ -23,7 +23,7 @@ TypeNames.prototype.type = function() {
         this.txt = fullName.substring(0, this.txt.length + 1)
     }
 
-    this.nameElement.innerHTML = `<span class="txt">${this.txt}</span>`
+    this.nameElement.innerHTML = ` <span class="txt">${this.txt}</span>`
     
     
     // Initial typing speed
@@ -36,7 +36,7 @@ TypeNames.prototype.type = function() {
     // check for if name complete
     if (!this.isDeleting && this.txt === fullName) {
         typeSpeed = this.wait // will set a end pause before delete name
-        this.nameElement.innerHTML = `<span class="txt" style="background-color:rgb(255, 198, 92); color:rgb(8, 87, 107); border-right:none;">${this.txt}</span>`
+        this.nameElement.innerHTML = ` <span class="txt" style="background-color:rgb(255, 198, 92); color:rgb(8, 87, 107); border-right:none;">${this.txt}</span>`
 
         this.isDeleting = true
     } else if (this.isDeleting && this.txt === '') {

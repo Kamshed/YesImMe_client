@@ -1,5 +1,5 @@
 #features-section {
-    padding: 15% 0%;
+    //padding: 15% 0%;
 }
 
 .featuresHeader {
@@ -28,8 +28,10 @@
 }
 
 .featuresContainer {
-    width: 70%;
-    margin: auto;
+    height: 80vh;
+    width: 60vw;
+    margin: 20vh auto auto auto;
+    //padding: 15% 0%;
 }
 
 .floatingFeaturesContainer {
@@ -38,6 +40,8 @@
     min-height: 180px;
     height: 100%;
     display: flex;
+    position: relative;
+    overflow-x: hidden;
 }
 
 #features-section .featureArticle {
@@ -46,6 +50,23 @@
     position: relative;
     width: 100%;
 }
+
+
+
+/* ---------- images ---------- */
+
+.featureImage.faceRecognition {
+    background-image: url("images/faceRecognition-min.jpg");
+    top: 0vh;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    background-attachment: fixed;
+}
+
+
 
 @media (min-width: 1030px) {
     #features-section .featureArticle {
@@ -71,11 +92,14 @@
 
 div.featureArticle {
     opacity: 0;
+    transform: translateY(25%);
     transition: all .35s ease-in .15s;
     height: fit-content;
     
     &.show {
         opacity: 1;
+        transform: translateY(0);
+        transition: all 750ms ease-in-out 250ms;
     }
 }
 
@@ -126,23 +150,3 @@ svg#features-title.featuresTitle {
         fill:#327796;
     }
 }
-
-/* .featureShadow {
-    height: 20px;
-    width: 70%;
-    background-color: rgba(0,0,0,0.35);
-    border-radius: 30%;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -60%);
-    z-index: -1;
-    filter: blur(10px);
-} */
-
-
-/* @media (min-width: 1030px) {
-    #features-section feature:nth-child(2) {
-        flex-direction: row-reverse;
-    }
-} */
