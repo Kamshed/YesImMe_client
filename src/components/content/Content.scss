@@ -1,0 +1,125 @@
+.contentSection {
+    
+    .container {
+        margin-top: 0;
+        padding-top: 150px;
+    }
+}
+
+.contentWrapper {
+    margin: auto;
+    width: fit-content;   
+}
+
+.contentSubHeader {
+    font-size: 1.25rem;
+    color: grey;
+}
+
+.contentOneWrapper {
+    height: 700px;
+    width: auto;
+    margin: 0px auto 150px auto;
+
+    .imageContainer {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        img {
+            top: 50%;
+            background-size: cover;
+            box-shadow: 0px 7px 20px -10px black;
+        }
+
+        img:nth-child(1) {
+            background-image: url("https://images.pexels.com/photos/122383/pexels-photo-122383.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350");
+            width: 250px;
+            height: 350px;
+            transform: translate(0%, -50%);
+            background-position: -150px;
+            filter: blur(0.06rem);
+        }
+
+        img:nth-child(2) {
+            background-image: url("https://images.pexels.com/photos/196655/pexels-photo-196655.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200");
+            width: 300px;
+            height: 200px;
+            transform: translate(30%, 40%);
+            filter: blur(0.04rem);
+        }
+
+        img:nth-child(3) {
+            background-image: url("https://images.pexels.com/photos/1542252/pexels-photo-1542252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=250");
+            width: 200px;
+            height: 250px;
+            transform: translate(140%, -50%);
+            background-position: -90px;
+            filter: blur(0.02rem);
+        }
+
+        img:nth-child(4) {
+            background-image: url("https://images.pexels.com/photos/786801/pexels-photo-786801.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200");
+            height: 200px;
+            width: 200px;
+            transform: translate(70%, -50%);
+        }
+    }
+
+    .content {
+        padding-left: 50px;
+
+        p {
+            margin: 0;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+    
+            >span {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
+
+.contentTwoWrapper {
+    padding: 150px 0px;
+
+    p {
+        position: unset;
+        top: unset;
+        transform: unset;
+    }
+}
+
+
+.socialMediaInfo {
+    position: relative;
+    margin: 50px auto;
+    width: fit-content;
+    min-width: 300px;
+    height: fit-content;
+    min-height: 4rem;
+    background-color: lightgrey;
+    border-radius: 5px;
+    padding: 20px;
+
+    p.quote {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-style: italic;
+        font-size: 1.25rem;
+    }
+}
+
+.socialMediaWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    img {
+        width: 72px;
+    }
+}

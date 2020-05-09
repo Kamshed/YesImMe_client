@@ -1,13 +1,12 @@
 /* ------------ main imports ------------ */
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Header from '../howItWorks/header/HowItWorksHeader'
 
 
 /* ------------ other imports ------------ */
-import { uesSpring , animated } from 'react-spring/renderprops'
-import Face from './faceIcon'
-import DL from './driverLicense'
-import AgeEstimation from './ageEstimation'
+import Compare from './icons/compareIcon'
+import Verify from './icons/verifyIcon'
+import Safe from './icons/safeIcon'
 
 
 /* ------------ styles ------------ */
@@ -15,35 +14,32 @@ import './Features.css'
 
 const features = [
     {
-        src: <Face />,
-        title: "Facial Verification",
-        info:   `Enim eu ea occaecat reprehenderit officia do quis 
-                cupidatat commodo duis. Reprehenderit consequat 
-                minim ut aliqua exercitation elit consequat 
-                voluptate ipsum consequat.`
+        src: <Compare />,
+        title: "Compare",
+        info:   `Facial recognition is used to compare 
+                user profile picture against drivers 
+                license.`
     },
     {
-        src:    <DL />,
-        title: "Drivers License Verification",
-        info:   `Ad velit ad velit elit irure deserunt duis 
-                Lorem do officia tempor. Occaecat culpa 
-                pariatur dolore cupidatat aliqua aliqua 
-                amet labore esse esse.`
+        src:    <Verify />,
+        title: "Verify",
+        info:   `Scan the users drivers license and 
+                verify it’s accuracy against 3rd party 
+                records.`
     },
     {
-        src: <AgeEstimation />,
-        title: "Age Estimation",
-        info:   `Minim ea non dolor proident mollit ea ad 
-                veniam excepteur officia. Aute exercitation 
-                consectetur sunt deserunt aliqua amet 
-                veniam quis consectetur id.`
+        src: <Safe />,
+        title: "Safe",
+        info:   `User information is verified, but not 
+                stored. No issues with hacking - the 
+                info isn't there!`
     }
 ]
 
 
 export default function Features() {
 
-    const [ feature, setFeature ] = useState(features[0])
+    //const [ feature, setFeature ] = useState(features[0])
 
     
     
@@ -80,29 +76,39 @@ export default function Features() {
         
     })
 
-    function displayFeature(e) {
+    /* function displayFeature(e) {
         setFeature(features[e.currentTarget.dataset.index])
-    }
+    } */
 
 
     return (
         <section id="features-section">
-            <div style={{ position: "relative", height: "60vh" }}>
-                <img className="featureImage faceRecognition"/>
+            <div className="imageContainer">
+                <h2 className="abs centered wht howItWorks">How it works</h2>
+                <img id="featuresImage" className="abs -one featureImage faceRecognition"/>
             </div>
-            <div className="featuresContainer">
-                <Header />
-                <div className="floatingFeaturesContainer">
+                {/* <Header /> */}
+                <div className="container content">
+                    <h4 style={{ lineHeight: "3rem"}}>Using Yes I'm Me</h4>
+                    <p> 
+                        The “Yes I’m Me” SDK or API can easily be added into platform in as little as 5 lines 
+                        of code. It uses facial ID recognition to compare your users against their IDs, to 
+                        immediately verify that they are who they say they are. This, combined with our 
+                        “Yes I’m Me” behavior and use policy, is the key to keeping your site free of these 
+                        controversial and time consuming issues.
+                    </p>
+                </div>
+                <div className="container flex">
                 
-                    {features.map((feauture, i) => (
+                    {features.map((feature, i) => (
 
-                        <animated.div key={i} data-index={i} onClick={e => displayFeature(e)} className="featureArticle">
+                        <div key={i} data-index={i} /* onClick={e => displayFeature(e)} */ className="featureArticle">
                             <div className="featureImgContainer">
-                                {feauture.src}
+                                {feature.src}
                             </div>
                             <div id="feature-info" className="featureInfoContainer">
                                 <div className="featureTitleContainer">
-                                  <header className="featureInfoTitle">{feauture.title}</header>
+                                  <h4 className="featureInfoTitle">{feature.title}</h4>
                                 </div>
                                 <article>
                                     <p className="featureInfoText">
@@ -111,39 +117,10 @@ export default function Features() {
                                 </article>
                             </div>
                             <div className="featureShadow"></div>
-                        </animated.div>
+                        </div>
                         ))
                     }
                 </div>
-            </div>
         </section>
     )
 }
-
-
-/* 
-<header className="featuresHeader">Features</header>
-                <section className="featureInfoSection">
-                    <article className="featureInfo">
-                        <h3>{feature.title}</h3>
-                        <p>{feature.info}</p>
-                    </article>
-                </section>
-                <div className="floatingFeaturesContainer">
-                    
-                    {features.map((feauture, i) => (
-
-                        <animated.div key={i} data-index={i} onClick={e => displayFeature(e)} className="featureArticle">
-                            <div className="featureImgContainer">
-                                <img className="featureImg" src={feauture.src} />
-                            </div>
-                            <div id="feature-info" className="featureInfoContainer">
-                                <div className="featureTitleContainer">
-                                  <header className="featureInfoTitle">{feauture.title}</header>
-                                </div>
-                            </div>
-                        </animated.div>
-                        ))
-                    }
-                </div>
-*/

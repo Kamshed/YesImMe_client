@@ -12,27 +12,27 @@ import './Footer.css'
 
 export default function Footer() {
     return (
-        <footer className="footerSection">
+        <footer className="footerSection wht bgDark">
             <div className="footerContainer">
                 <section className="socialMediaConatiner">
-                    <SocialIcon network="facebook" />
-                    <SocialIcon network="linkedin" />
-                    <SocialIcon network="youtube" />
-                    <SocialIcon network="email" />
+                    <SocialIcon style={{ height: 40, width: 40 }} bgColor="white" network="facebook" />
+                    <SocialIcon style={{ height: 40, width: 40 }} bgColor="white" network="linkedin" />
+                    <SocialIcon style={{ height: 40, width: 40 }} bgColor="white" network="youtube" />
+                    <SocialIcon style={{ height: 40, width: 40 }} bgColor="white" network="email" />
                 </section>
                 <ul className="footerLinks">
-                    <li><a>Sales</a></li>
-                    <span className="dot"></span>
+                    <li className="noStyle"><a>Sales</a></li>
+                    <span className="spacing"></span>
                     <li><a>Support</a></li>
-                    <span className="dot"></span>
+                    <span className="spacing"></span>
                     <li><a>Sales</a></li>
-                    <br/>
-                    <li><a>Terms of Use</a></li>
-                    <span className="dot"></span>
+                    <li className="noStyle"><a>Terms of Use</a></li>
+                    <span className="spacing"></span>
                     <li><a>Privacy Policy</a></li>
                 </ul>
                 <section className="footerCopyright">
                     <p>Copyright ©2020 Kamshed, Inc.</p>
+                    <p>Icons by <a style={{ color: "white" }} target="blank" href="https://icons8.com/">https://icons8.com/</a></p>
                 </section>
             </div>
         </footer>

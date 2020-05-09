@@ -1,23 +1,29 @@
 /* ------------ main imports ------------ */
 import React, { useEffect } from 'react'
-import HowItWorksHeader from './header/HowItWorksHeader'
 
 
 
 /* ------------ other imports ------------ */
-import { TimelineLite } from "gsap"
-import ScrollMagic from "scrollmagic"
+import * as ScrollMagic from "scrollmagic"
+import { TimelineLite, gsap } from "gsap"
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap"
+import { CSSPlugin } from 'gsap/CSSPlugin'
 
 
 /* ------------ styles ------------ */
 import "./HowItWorks.css"
 
 
+// Force CSSPlugin to not get dropped during build
+gsap.registerPlugin(CSSPlugin)
+
+
+
 export default function HowItWorks() {
     
     ScrollMagicPluginGsap(ScrollMagic, TimelineLite)
-
+    console.log(ScrollMagic)
+    console.log(ScrollMagicPluginGsap)
 
     useEffect(() => {
         const headerTween = new TimelineLite()
@@ -68,7 +74,7 @@ export default function HowItWorks() {
             const icons = document.querySelectorAll(".socialMediaIcon")
             const observer = new IntersectionObserver(entry => {
                 for (let i = 0; i < entry.length; i++) {
-                    if (entry[i].intersectionRatio === 1) { 
+                    if (entry[i].intersectionRatio === 1) {
                         entry[i].target.classList.add("inView") 
                     }
                 }
@@ -149,7 +155,6 @@ export default function HowItWorks() {
         .setTween(section2Tween3)
         .addTo(controller)
 
-
     })
 
     function toggleSection1Out() {
@@ -160,6 +165,9 @@ export default function HowItWorks() {
     function toggleSection2In() {
         document.querySelector(".contentContainer1").classList.toggle("transition")
     }
+
+
+    
 
     return (
         <section id="how-it-works-section">

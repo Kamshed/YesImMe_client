@@ -4,8 +4,7 @@ import React, { useEffect, useState } from 'react'
 
 /* ---------- other imports ---------- */
 import TypeNames from '../../util/TypeNames'
-import { ReactComponent as ArrowDown } from '../../assets/arrowDown.svg'
-import smoothScroll from '../../util/smoothScroll'
+import Button from 'react-bootstrap/Button'
 
 
 /* ---------- styles ---------- */
@@ -72,17 +71,10 @@ export default function Home(props) {
 
 
     return (
-        <section 
-            id="home-section" 
-            data-IO="nav" // intersection observer for navbar
-        >
-            <div style={{
-                position: "relative",
-                height: "100%",
-                width: "100%"
-            }}>
-            <header id="home-header" className="homeHeader">
-                <h1 className="header">
+        <section id="home-section">
+            <div className="headerWrapper">
+            <header id="home-header" className="abs one centered textCentered form-1 wht">
+                <h1>
                     Yes I'm
                     <span 
                         id="home-header-name" 
@@ -95,12 +87,8 @@ export default function Home(props) {
                     Discrimination, Catfishing and Fake 
                     Accounts on your site and apps
                 </p>
+                <Button variant="outline-light" className="btn">try now</Button>
             </header>
-            {/* <ArrowDown 
-                id="arrow-down" 
-                className="arrowDown"
-                //onClick={() => arrowDown()}
-            /> */}
             </div>
         </section>
     )
