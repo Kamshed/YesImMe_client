@@ -7,8 +7,6 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import OverlayTooltip from '../multiuse/OverlayTooltip'
-//import {useSpring, animated} from 'react-spring'
-
 
 
 /* ------------ styles ------------ */
@@ -113,7 +111,7 @@ function DemoForm(props) {
 
     return (
 
-            <Form id="demo-form" className="hidden" onSubmit={e => submitForm(e, props)} >
+            <Form id="demo-form" onSubmit={e => submitForm(e, props)} >
                 <Form.Group className="formInput" controlId="formUsername">
                     <Form.Label><h5>Username</h5></Form.Label>
                     <OverlayTrigger

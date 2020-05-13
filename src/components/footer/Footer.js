@@ -25,7 +25,7 @@ export default function Footer() {
                     <span className="spacing"></span>
                     <li><a>Support</a></li>
                     <span className="spacing"></span>
-                    <li><a>Sales</a></li>
+                    <li><a>Press</a></li>
                     <li className="noStyle"><a>Terms of Use</a></li>
                     <span className="spacing"></span>
                     <li><a>Privacy Policy</a></li>

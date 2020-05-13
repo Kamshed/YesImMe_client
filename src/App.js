@@ -1,18 +1,18 @@
 /* ------------ main imports ------------ */
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Route } from 'react-router-dom'
 
 
 /* ------------ route imports ------------ */
 import TheNavbar from './components/navbar/Navbar'
 import Home from './components/home/Home'
-import DemoArea from './components/demo/DemoArea'
+import Demo from './components/demo/Demo'
 import Features from './components/features/Features'
 import Contact from './components/contact/ContactForm'
 import Footer from './components/footer/Footer'
-//import HowItWorks from './components/howItWorks/HowItWorks'
 import Content from './components/content/Content'
 import videoBG from './media/videoBG.mp4'
+import Context from './Context'
 
 
 
@@ -22,25 +22,38 @@ import './App.css'
 
 
 export default function App() {
+
+  const [showDemo, setShowDemo] = useState(false);
+
+  const closeModal = () => setShowDemo(false);
+  const showModal = () => setShowDemo(true);
+
  
   useEffect(() => { 
     
 
   })
 
+  const contextValue = { closeModal, showModal }
+
     return (
-      <div className="dark">  
-        <Route
-          id="navbar"
-          path="/"
-          component={ TheNavbar }
+      <Context.Provider value={ contextValue }>
+        <div className="dark">  
+          <Route
+            id="navbar"
+            path="/"
+            component={ TheNavbar }
           />
-        {/* <div id="expanding-background" className="expandingBackground"> */}
-        <div id="videoBG" className='player-wrapper' style={{ pointerEvents: "none" }}>
-          <video className="react-player" muted autoPlay loop>
-              <source type="video/mp4" src={ videoBG }/>
-          </video>
-      </div>
+          <Demo
+            display={ showDemo }
+            path="/"
+            component={ Demo }
+          />
+          <div id="videoBG" className='player-wrapper' style={{ pointerEvents: "none" }}>
+            <video className="react-player" muted autoPlay loop>
+                <source type="video/mp4" src={ videoBG }/>
+            </video>
+          </div>
           <Route
             id="home"
             path="/"
@@ -51,32 +64,22 @@ export default function App() {
             path="/"
             component={ Content }
           />
-          {/* <Route
-            id="demo"
+          <Route
+            id="features"
             path="/"
-            component={ DemoArea }
-            /> */}
-        {/* </div> */}
-        {/* <Route
-          id="how-it-works"
-          path="/"
-          component={ HowItWorks }
-          /> */}
-        <Route
-          id="features"
-          path="/"
-          component={ Features }
+            component={ Features }
+            />
+          <Route
+            id="contact"
+            path="/"
+            component={ Contact }
+            />
+          <Route
+            id="footer"
+            path="/"
+            component={ Footer }
           />
-        <Route
-          id="contact"
-          path="/"
-          component={ Contact }
-          />
-        <Route
-          id="footer"
-          path="/"
-          component={ Footer }
-        />
-      </div>
+        </div>
+      </Context.Provider>
     )
 }
