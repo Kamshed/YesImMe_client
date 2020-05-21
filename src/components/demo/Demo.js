@@ -24,7 +24,7 @@ export default function Demo(props) {
 
     function submitForm(form) {
         setLoading(true)
-        fetch('https://kamshedtest.herokuapp.com/api/upload', {
+        fetch('https://kamshed.herokuapp.com/api/upload', {
             method: 'POST',
             body: new FormData(form)
         })

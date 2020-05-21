@@ -15,7 +15,7 @@ export default function Contact() {
         const urlencoded = new URLSearchParams()
         inputs.forEach(data => urlencoded.append(data.name, data.value))
        
-        fetch('https://kamshedtest.herokuapp.com/api/send', {
+        fetch('https://kamshed.herokuapp.com/api/send', {
             method: 'POST',
             body: urlencoded
         })
