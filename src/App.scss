@@ -2,6 +2,8 @@ $blue: #0d7691;
 $green: #22916f;
 $dark: #232d33;
 
+$breakpoint-phone: 425px;
+
 html {
     scroll-behavior: smooth;
 }
@@ -73,6 +75,27 @@ h6 {
     }
 }
 
+.modal {
+    padding: 0!important;
+}
+
+@media (max-width: $breakpoint-phone) {
+    .modal {
+        overflow: hidden!important;
+        z-index: 2001;
+    }
+
+    .modalForm {
+        margin: 0;
+    }
+    
+    .modal-content {
+        border: none;
+        border-radius: 0;
+        height: 100vh;
+    }
+}
+
 .form-1 {
     input, input:focus, textArea, textArea:focus {
         background-color: transparent;
@@ -92,6 +115,16 @@ h6 {
             color: $blue;
         }
     }
+}
+
+input {
+    border: rgb(189, 189, 189) 1px solid;
+    border-radius: 0.25rem;
+}
+
+.invalid {
+    border: red 1px solid;
+    border-radius: 0.25rem;
 }
 
 .container {

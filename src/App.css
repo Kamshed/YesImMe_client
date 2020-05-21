@@ -81,6 +81,25 @@ h6 {
   z-index: -4;
 }
 
+.modal {
+  padding: 0 !important;
+}
+
+@media (max-width: 425px) {
+  .modal {
+    overflow: hidden !important;
+    z-index: 2001;
+  }
+  .modalForm {
+    margin: 0;
+  }
+  .modal-content {
+    border: none;
+    border-radius: 0;
+    height: 100vh;
+  }
+}
+
 .form-1 input, .form-1 input:focus, .form-1 textArea, .form-1 textArea:focus {
   background-color: transparent;
   border: white solid 2px;
@@ -111,6 +130,16 @@ h6 {
 .form-1 .btn:hover {
   font-weight: 500;
   color: #0d7691;
+}
+
+input {
+  border: #bdbdbd 1px solid;
+  border-radius: 0.25rem;
+}
+
+.invalid {
+  border: red 1px solid;
+  border-radius: 0.25rem;
 }
 
 .container {
