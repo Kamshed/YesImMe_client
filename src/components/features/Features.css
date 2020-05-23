@@ -37,6 +37,18 @@
   height: inherit;
 }
 
+@media (max-width: 1023px) {
+  #features-section .featureArticle {
+    margin: 25px auto;
+  }
+}
+
+@media (max-width: 1023px) {
+  #features-section .features-container {
+    width: 300px;
+  }
+}
+
 /* ---------- images ---------- */
 .featureImage.faceRecognition {
   background-image: url("images/faceRecog.jpg");
@@ -126,5 +138,20 @@ svg#features-title.featuresTitle {
   top: 0%;
   -webkit-transform: translate(-50%, 0%);
           transform: translate(-50%, 0%);
+}
+
+@media (max-width: 424px) {
+  .imageContainer .howItWorks {
+    font-size: 5rem;
+    top: 30%;
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+  }
+}
+
+@media (max-width: 424px) {
+  #features-section .content-wrapper {
+    margin: 50px auto;
+  }
 }
 /*# sourceMappingURL=Features.css.map */

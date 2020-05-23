@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button'
 import './Contact.css'
 
 export default function Contact() {
+    const [ phone, setPhone ] = useState(false)
 
     function sendMail(e) {
         e.preventDefault()
@@ -25,7 +26,24 @@ export default function Contact() {
         .then(text => console.log(text))
         .catch(err => console.error(err))
     }
-      
+
+    useEffect(() => {
+        const tabletUpRows = document.querySelectorAll('.tabletUp')
+        const phoneRows = document.querySelectorAll('.phone')
+
+        if (!phone) {
+            tabletUpRows.forEach(row => row.classList.remove("hide"))
+            phoneRows.forEach(row => row.classList.add("hide"))
+        } else {
+            phoneRows.forEach(row => row.classList.remove("hide"))
+            tabletUpRows.forEach(row => row.classList.add("hide"))
+        }
+    })
+    
+    window.addEventListener("resize", () => {
+        if (window.innerWidth < 426) setPhone(true)
+        else setPhone(false)
+    })
 
     return (
         <section id="contact-section" className="gradient">
@@ -41,13 +59,30 @@ export default function Contact() {
                         <h3>Contact</h3>
                     </header>
                     </Col>
-                    <Form.Row>
+                    <Form.Row className="tabletUp">
                         <Col>
                             <Form.Group controlId="from-name">
                                 <Form.Label>Name</Form.Label>
                                 <Form.Control placeholder="Erin" name="name" />
                             </Form.Group>
                         </Col>
+                        <Col>
+                            <Form.Group controlId="from-email">
+                                <Form.Label>Email</Form.Label>
+                                <Form.Control type="email" placeholder="Erin@email.com" name="email" />
+                            </Form.Group>
+                        </Col>
+                    </Form.Row>
+                    <Form.Row className="phone">
+                        <Col>
+                            <Form.Group controlId="from-name">
+                                <Form.Label>Name</Form.Label>
+                                <Form.Control placeholder="Erin" name="name" />
+                            </Form.Group>
+                        </Col>
+                    </Form.Row>
+
+                    <Form.Row className="phone">
                         <Col>
                             <Form.Group controlId="from-email">
                                 <Form.Label>Email</Form.Label>

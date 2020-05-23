@@ -1,8 +1,5 @@
-$blue: #0d7691;
-$green: #22916f;
-$dark: #232d33;
+@import "util/imports";
 
-$breakpoint-phone: 425px;
 
 html {
     scroll-behavior: smooth;
@@ -11,6 +8,13 @@ html {
 body {
     overflow: auto!important;
     padding: 0px!important;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Roboto', sans-serif;
+}
+p {
+    font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
@@ -31,9 +35,45 @@ h5 {
 h6 {
     font-size: 0.75rem;
 }
+.thin {
+    font-weight: 100;
+}
+.bold {
+    font-weight: bold;
+}
+
+@media (max-width: $breakpoint-phone) {
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.75rem;
+    }
+    h4 {
+        font-size: 1.5rem;
+    }
+    h5 {
+        font-size: 1rem;
+    }
+    h6 {
+        font-size: 0.75rem;
+    }
+}
+
+.hide {
+    display: none;
+}
 
 .flex {
     display: flex;
+}
+@media (max-width: $breakpoint-tablet) {
+    .flex {
+        flex-wrap: wrap;
+    }
 }
 
 .wht {
@@ -74,6 +114,62 @@ h6 {
         z-index: -4;
     }
 }
+
+
+
+.container {
+    margin: 150px auto;
+    height: 100%;
+    width: 1000px;
+    max-width: 90%;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+.centered {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.textCentered {
+    text-align: center;
+}
+
+.blue {
+    color: $blue;
+    background-color: $blue;
+}
+
+.green {
+    color: $green;
+    background-color: $green;
+}
+
+.dark {
+    color: $dark;
+}
+
+.bgDark {
+    background-color: $dark;
+}
+
+.gradient {
+    background-image: linear-gradient($blue, $green);
+}
+
+.noMargin {
+    margin: 0;
+}
+
+
+
+
+/* -------------------- modal/forms -------------------- */
 
 .modal {
     padding: 0!important;
@@ -127,76 +223,14 @@ input {
     border-radius: 0.25rem;
 }
 
-.container {
-    margin: 150px auto;
-    height: 100%;
-    width: 1000px;
-    max-width: 90%;
-}
 
-.content {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-}
 
-.centered {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
-.textCentered {
-    text-align: center;
-}
 
-.blue {
-    color: $blue;
-    background-color: $blue;
-}
-
-.green {
-    color: $green;
-    background-color: $green;
-}
-
-.dark {
-    color: $dark;
-}
-
-.bgDark {
-    background-color: $dark;
-}
-
-.gradient {
-    background-image: linear-gradient($blue, $green);
-}
-
-.noMargin {
-    margin: 0;
-}
-
-.expandingBackground {
-    display: block;
-    background-image: linear-gradient($blue, $green);
-    height: 85vh;
-    width: 100%;
-
-    &::after { // apply background image?
-        
-        //content: url("https://images.pexels.com/photos/3934512/pexels-photo-3934512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1080");
-        //mix-blend-mode: lighten;
-        pointer-events: none;
-    }
-
-    &.expanded {
-        height: 250vh;
-        transition: all 750ms ease-out;
-    }
-}
+/* -------------------- videoBG -------------------- */
 
 .player-wrapper {
-    position: relative;
+    //position: relative;
     height: 70vh;
     overflow: hidden;
     filter: brightness(0.4);
@@ -204,7 +238,29 @@ input {
  
 .react-player {
     position: absolute;
-    top: -20%;
-    left: 0;
+    //top: -20%;
+    //left: 0;
     width: 100%;
+}
+
+@media (max-width: $breakpoint-tablet) and (min-width: 426px) {
+
+    .react-player {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: unset;
+    }
+}
+
+@media (max-width: $breakpoint-phone) {
+
+    .react-player {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        height: 100%;
+        width: unset;
+    }
 }

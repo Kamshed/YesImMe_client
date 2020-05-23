@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useState } from 'react'
 
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
@@ -10,6 +10,7 @@ import './Navbar.css'
 
 export default function TheNavbar(){
   const context = useContext(Context)
+  const [ menu, setMenu ] = useState(false) // control open/close
 
   useEffect(() => {
     const homeSection = document.querySelector('#videoBG')
@@ -28,12 +29,41 @@ export default function TheNavbar(){
     }
 
     document.addEventListener("scroll", () => showNav())
+
+    
+
+    /* -------------------- hamburger -------------------- */
+
+    function navOpen() {
+      if (!menu) {
+        menuBtn.classList.add("open")
+        navMenu.classList.add("open")
+        setMenu(true)
+      }
+      else {
+        menuBtn.classList.remove("open")
+        navMenu.classList.remove("open")
+        setMenu(false)
+      }
+    }
+
+    const menuBtn = document.querySelector(".menu-btn")
+    const navLink = document.querySelectorAll(".nav-link")
+    const navMenu = document.querySelector("#nav")
+    
+
+    menuBtn.addEventListener("click", () => navOpen())
+    navLink.forEach(link => link.addEventListener("click", () => navOpen()))
+
   })
 
     return (
         <>
           <Navbar id="nav" className="clear" style={{ position: "fixed", width: "100%", zIndex: "2000" }}>
             <Navbar.Brand href="#home-section">YesImMe</Navbar.Brand>
+            <div className="menu-btn">
+              <div className="menu-btn__burger"></div>
+            </div>
             <Nav className="nav-links">
               <Nav.Link onClick={ context.showModal }><span>try now</span></Nav.Link>
               <Nav.Link href="#content-container"><span>why</span></Nav.Link>

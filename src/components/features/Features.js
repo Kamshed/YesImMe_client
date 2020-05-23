@@ -88,7 +88,7 @@ export default function Features() {
                 <img id="featuresImage" className="abs -one featureImage faceRecognition"/>
             </div>
                 {/* <Header /> */}
-                <div className="container content">
+                <div className="content-wrapper container content">
                     <h4 style={{ lineHeight: "3rem"}}>Using Yes I'm Me</h4>
                     <p> 
                         The “Yes I’m Me” SDK or API can easily be added into platform in as little as 5 lines 
@@ -98,7 +98,7 @@ export default function Features() {
                         controversial and time consuming issues.
                     </p>
                 </div>
-                <div className="container flex">
+                <div className="features-container container flex">
                 
                     {features.map((feature, i) => (
 

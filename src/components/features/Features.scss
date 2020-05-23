@@ -1,3 +1,5 @@
+@import "../../util/imports";
+
 .featuresHeader {
     position: absolute;
     top: 20%;
@@ -30,6 +32,16 @@
     position: relative;
     width: 100%;
     height: inherit;
+}
+@media (max-width: $breakpoint-tablet) {
+    #features-section .featureArticle {
+        margin: 25px auto;
+    }
+}
+@media (max-width: $breakpoint-tablet) {
+    #features-section .features-container {
+        width: 300px;
+    }
 }
 
 
@@ -113,5 +125,18 @@ svg#features-title.featuresTitle {
         position: fixed;
         top: 0%;
         transform: translate(-50%, 0%);
+    }
+    @media (max-width: $breakpoint-phone) {
+        .howItWorks {
+            font-size: 5rem;
+            top: 30%;
+            transform: translate(-50%, 0%);
+        }
+    }
+}
+
+@media (max-width: $breakpoint-phone) {
+    #features-section .content-wrapper {
+        margin: 50px auto;
     }
 }

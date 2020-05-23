@@ -1,5 +1,8 @@
+@import "../../util/imports";
+
 #nav.clear {
     background-color: transparent;
+    
 
     span {
         color: white;
@@ -13,6 +16,14 @@
     .navbar-brand {
         color: white;
     }
+
+    @media (max-width: $breakpoint-tablet) {
+        .menu-btn__burger,
+        .menu-btn__burger::before,
+        .menu-btn__burger::after {
+            background: white;
+        }
+    }
 }
 
 #nav {
@@ -25,6 +36,10 @@
     .navbar-brand {
         color: rgba(0,0,0,0.9);
         padding-left: 10px;
+        position: absolute;
+        left: 15px;
+        opacity: 1;
+        transition: all .35s ease-in-out .35s;
     }
 
     &.hide {
@@ -34,8 +49,21 @@
             opacity 0.35s ease-in-out, 
             top 0.5s ease-in-out;
     }
+
+    @media (max-width: $breakpoint-tablet) {
+        .menu-btn__burger,
+        .menu-btn__burger::before,
+        .menu-btn__burger::after {
+            background: rgba(0,0,0,0.9);
+        }
+    }
 }
 
+#nav.navbar {
+    height: 56px;
+    overflow: hidden;
+    transition: all .35s ease-in-out;
+}
 
 
 .nav-links {
@@ -45,3 +73,97 @@
     justify-content: space-evenly;
 }
 
+
+
+
+/* ---------- Hamburger Menu ---------- */
+@media (max-width: $breakpoint-tablet) {
+
+    .menu-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 30px;
+        cursor: pointer;
+        transition: all .35s ease-in-out;
+    }
+    
+    .menu-btn__burger {
+        width: 30px;
+        height: 4px;
+        background: #fff;
+        border-radius: 5px;
+        transition: all .35s ease-in-out;
+    }
+
+    .menu-btn__burger::before,
+    .menu-btn__burger::after {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 4px;
+        background: #fff;
+        border-radius: 5px;
+        transition: all .35s ease-in-out;
+    }
+    
+    .menu-btn__burger::before {
+        transform: translateY(-10px);
+    }
+    
+    .menu-btn__burger::after {
+        transform: translateY(10px);
+    }
+    
+    /* ---------- Menu Animation ---------- */
+    
+    #nav.navbar.open {
+        background-color: black;
+        height: 100%;
+        transition: all .35s ease-in-out .25s;
+    
+        .navbar-brand {
+            opacity: 0;
+            left: -50px;
+            transition: all .25s ease-in-out;
+        }
+    
+        .nav-links {
+            display: unset;
+            flex-direction: column;
+            text-align: center;
+            margin: auto;
+            height: fit-content;
+            font-size: 1.5rem;
+        
+            a {
+                color: white;
+                width: fit-content;
+                margin: 2rem auto;
+            }
+        }
+    }
+    
+    @media (max-width: $breakpoint-tablet) {
+        #nav > .nav-links {
+            display: none;
+        }
+    }
+    
+    .menu-btn.open .menu-btn__burger {
+        transform: translateX(-30px);
+        background: transparent!important;
+    }
+    
+    .menu-btn.menu-btn.open .menu-btn__burger::before {
+        transform: rotate(45deg) translate(20px, -20px);
+    }
+    
+    .menu-btn.menu-btn.open .menu-btn__burger::after {
+        transform: rotate(-45deg) translate(20px, 20px);
+    }
+}
