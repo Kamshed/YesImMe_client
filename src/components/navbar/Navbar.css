@@ -11,6 +11,12 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
+@media (max-width: 1023px) {
+  #nav.clear span {
+    font-weight: bolder;
+  }
+}
+
 #nav.clear .navbar-brand {
   color: white;
 }
@@ -154,6 +160,12 @@
     width: -moz-fit-content;
     width: fit-content;
     margin: 2rem auto;
+  }
+  #nav.navbar.open .menu-btn__burger::before {
+    background-color: white;
+  }
+  #nav.navbar.open .menu-btn__burger::after {
+    background-color: white;
   }
 }
 

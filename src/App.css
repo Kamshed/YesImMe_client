@@ -47,7 +47,7 @@ h6 {
   font-weight: bold;
 }
 
-@media (max-width: 424px) {
+@media (max-width: 426px) {
   h1 {
     font-size: 3rem;
   }
@@ -61,10 +61,39 @@ h6 {
     font-size: 1.5rem;
   }
   h5 {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   h6 {
-    font-size: 0.75rem;
+    font-size: 1rem;
+  }
+  p {
+    font-size: 1.25rem;
+  }
+  input {
+    font-size: 1.25rem;
+  }
+  button, .btn {
+    font-size: 1.25rem;
+  }
+  /* override react-bootsrap form css */
+  .modal-body {
+    overflow-y: scroll;
+  }
+  .form-control {
+    font-size: 1.5rem;
+  }
+  .modal-header {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .modal-header .close {
+    padding: 0;
+    margin: unset;
+    line-height: 2rem;
+  }
+  .modal-header .close span {
+    font-size: 2rem;
   }
 }
 
@@ -142,6 +171,12 @@ h6 {
   max-width: 600px;
 }
 
+@media (max-width: 426px) {
+  .contentSubHeader {
+    font-size: 1.25rem;
+  }
+}
+
 .centered {
   top: 50%;
   left: 50%;
@@ -185,7 +220,7 @@ h6 {
   padding: 0 !important;
 }
 
-@media (max-width: 424px) {
+@media (max-width: 426px) {
   .modal {
     overflow: hidden !important;
     z-index: 2001;
@@ -225,6 +260,13 @@ h6 {
 .form-1 .btn {
   border-width: 2px;
   font-weight: 500;
+  padding: 0.25rem 0.75rem 0.5rem 0.75rem;
+}
+
+@media (max-width: 426px) {
+  .form-1 .btn {
+    font-size: 1.5rem;
+  }
 }
 
 .form-1 .btn:hover {
@@ -255,17 +297,17 @@ input {
   width: 100%;
 }
 
-@media (max-width: 1023px) and (min-width: 426px) {
+@media (max-width: 1023px) and (min-width: 426px) and (orientation: portrait) {
   .react-player {
     position: absolute;
     top: 0;
-    left: 0;
+    right: -30%;
     height: 100%;
     width: unset;
   }
 }
 
-@media (max-width: 424px) {
+@media (max-width: 426px) and (orientation: portrait) {
   .react-player {
     position: absolute;
     top: 0;

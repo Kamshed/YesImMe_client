@@ -56,10 +56,40 @@ h6 {
         font-size: 1.5rem;
     }
     h5 {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
     h6 {
-        font-size: 0.75rem;
+        font-size: 1rem;
+    }
+    p {
+        font-size: 1.25rem;
+    }
+    input {
+        font-size: 1.25rem;
+    }
+    button, .btn {
+        font-size: 1.25rem;
+    }
+
+    /* override react-bootsrap form css */
+    .modal-body {
+        overflow-y: scroll;
+    }
+    .form-control {
+        font-size: 1.5rem;
+    }
+    .modal-header {
+        align-items: center;
+
+        .close {
+            padding: 0;
+            margin: unset;
+            line-height: 2rem;
+
+            span {
+                font-size: 2rem;
+            }
+        }
     }
 }
 
@@ -128,6 +158,12 @@ h6 {
     position: relative;
     width: 100%;
     max-width: 600px;
+}
+
+@media (max-width: $breakpoint-phone) {
+    .contentSubHeader {
+        font-size: 1.25rem;
+    }
 }
 
 .centered {
@@ -205,6 +241,10 @@ h6 {
     .btn {
         border-width: 2px;
         font-weight: 500;
+        padding: 0.25rem 0.75rem 0.5rem 0.75rem;
+        @media (max-width: $breakpoint-phone) {
+            font-size: 1.5rem;
+        }
 
         &:hover {
             font-weight: 500;
@@ -230,7 +270,6 @@ input {
 /* -------------------- videoBG -------------------- */
 
 .player-wrapper {
-    //position: relative;
     height: 70vh;
     overflow: hidden;
     filter: brightness(0.4);
@@ -238,23 +277,21 @@ input {
  
 .react-player {
     position: absolute;
-    //top: -20%;
-    //left: 0;
     width: 100%;
 }
 
-@media (max-width: $breakpoint-tablet) and (min-width: 426px) {
+@media (max-width: $breakpoint-tablet) and (min-width: 426px) and (orientation: portrait) {
 
     .react-player {
         position: absolute;
         top: 0;
-        left: 0;
+        right: -30%;
         height: 100%;
         width: unset;
     }
 }
 
-@media (max-width: $breakpoint-phone) {
+@media (max-width: $breakpoint-phone) and (orientation: portrait) {
 
     .react-player {
         position: absolute;

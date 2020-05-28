@@ -126,6 +126,13 @@ svg#features-title.featuresTitle {
         top: 0%;
         transform: translate(-50%, 0%);
     }
+    @media (max-width: $breakpoint-tablet) {
+        .howItWorks {
+            font-size: 10rem;
+            top: 5%;
+            width: 90%;
+        }
+    }
     @media (max-width: $breakpoint-phone) {
         .howItWorks {
             font-size: 5rem;

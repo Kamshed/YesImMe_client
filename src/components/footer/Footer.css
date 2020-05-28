@@ -1,5 +1,6 @@
 footer.footerSection {
   height: 40vh;
+  min-height: 300px;
   position: relative;
 }
 
@@ -66,5 +67,9 @@ footer.footerSection .footerContainer .footerLinks .spacing {
 footer.footerSection .footerContainer .footerCopyright {
   text-align: center;
   margin: 20px 0px 20px 0px;
+}
+
+footer.footerSection .footerCopyright > * {
+  font-size: 1rem;
 }
 /*# sourceMappingURL=Footer.css.map */

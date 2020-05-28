@@ -4,9 +4,12 @@
   height: 80vh;
 }
 
-@media (max-width: 424px) {
+@media (max-width: 1023px) {
   #contact-section {
-    min-height: 700px;
+    min-height: 880px;
+  }
+  .container {
+    position: relative;
   }
 }
 
@@ -24,13 +27,21 @@
           transform: translate(-50%, -50%);
 }
 
-@media (max-width: 424px) {
+@media (max-width: 426px) and (orientation: portrait) {
   #contact-form {
     max-height: 580px;
+    top: 50px;
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
   }
 }
 
-.contactLink {
+#contact-section .contactLink {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   margin-top: 5%;
 }
 /*# sourceMappingURL=Contact.css.map */

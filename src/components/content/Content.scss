@@ -170,6 +170,13 @@
 @media (max-width: $breakpoint-phone) {
     .socialMediaWrapper {
        margin: 0; 
+       justify-content: space-evenly;
+        
+       img {
+            width: 72px;
+            flex: 0 0 27%;
+            margin: 25px 2%;
+        }
     }
 }
 
@@ -179,15 +186,12 @@
     background-size: contain;
     width: 250px;
     height: 250px;
-}
-@media (max-width: $breakpoint-phone) {
-    .fake-img {
-        margin: auto;
-    }
+    margin: auto;
 }
 
 .content-info {
     margin: 100px auto;
+    max-width: inherit;
 }
 @media (max-width: $breakpoint-phone) {
     .content-info {
@@ -196,6 +200,10 @@
 }
 .content-wrapper {
     width: inherit;
+
+    h4 {
+        font-weight: bold;
+    }
 }
 @media (max-width: $breakpoint-tablet) {
     .content-wrapper {
@@ -244,12 +252,15 @@
     font-weight: bold;
     font-size: 16px;
     line-height: 2rem;
-    margin-left: auto;
-    padding: 0 20px;
+    //margin-left: auto;
+    //padding: 0 20px;
     width: 480px;
+    max-width: 90%;
 }
-@media (max-width: $breakpoint-phone) {
+@media (max-width: $breakpoint-tablet) {
     .contentSubHeader {
         width: inherit;
+        padding: unset;
+        margin: auto;
     }
 }

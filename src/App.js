@@ -28,11 +28,6 @@ export default function App() {
   const closeModal = () => setShowDemo(false);
   const showModal = () => setShowDemo(true);
 
- 
-  useEffect(() => { 
-    
-
-  })
 
   const contextValue = { closeModal, showModal }
 

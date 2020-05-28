@@ -1,7 +1,9 @@
+@import "../../util/imports"
+
 footer.footerSection {
     height: 40vh;
+    min-height: 300px;
     position: relative;
-    //background-color: #232d33;
 
     .footerContainer {
         position: absolute;
@@ -23,6 +25,9 @@ footer.footerSection {
                     opacity: 0.6;
                 }
             }
+        }
+        @media (max-width: $breakpoint-phone) {
+            justify-content: space-evenly;
         }
 
         .footerLinks {
@@ -57,5 +62,9 @@ footer.footerSection {
             text-align: center;
             margin: 20px 0px 20px 0px;
         }
+    }
+
+    .footerCopyright > * {
+        font-size: 1rem;
     }
 }

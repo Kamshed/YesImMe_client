@@ -12,7 +12,11 @@
             color: rgba(255, 255, 255, 0.5)
         }
     }
-
+    @media (max-width: $breakpoint-tablet) {
+        span {
+            font-weight: bolder;
+        }
+    }
     .navbar-brand {
         color: white;
     }
@@ -145,6 +149,14 @@
                 width: fit-content;
                 margin: 2rem auto;
             }
+        }
+
+        .menu-btn__burger::before {
+            background-color: white;
+        }
+        
+        .menu-btn__burger::after {
+            background-color: white;
         }
     }
     

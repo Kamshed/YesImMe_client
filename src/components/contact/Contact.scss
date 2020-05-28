@@ -5,9 +5,13 @@
     width: 100%;
     height: 80vh;
 }
-@media (max-width: $breakpoint-phone) {
+
+@media (max-width: $breakpoint-tablet) {
     #contact-section {
-        min-height: 700px;
+        min-height: 880px;
+    }
+    .container {
+        position: relative;
     }
 }
 
@@ -23,12 +27,18 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-@media (max-width: $breakpoint-phone) {
+@media (max-width: $breakpoint-phone) and (orientation: portrait) {
     #contact-form {
         max-height: 580px;
+        top: 50px;
+        transform: translate(-50%, 0%);
     }
 }
 
-.contactLink {
+#contact-section .contactLink {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
     margin-top: 5%;
 }

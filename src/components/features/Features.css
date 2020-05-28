@@ -140,7 +140,15 @@ svg#features-title.featuresTitle {
           transform: translate(-50%, 0%);
 }
 
-@media (max-width: 424px) {
+@media (max-width: 1023px) {
+  .imageContainer .howItWorks {
+    font-size: 10rem;
+    top: 5%;
+    width: 90%;
+  }
+}
+
+@media (max-width: 426px) {
   .imageContainer .howItWorks {
     font-size: 5rem;
     top: 30%;
@@ -149,7 +157,7 @@ svg#features-title.featuresTitle {
   }
 }
 
-@media (max-width: 424px) {
+@media (max-width: 426px) {
   #features-section .content-wrapper {
     margin: 50px auto;
   }
