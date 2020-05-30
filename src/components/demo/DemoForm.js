@@ -85,8 +85,6 @@ function displayFilename(e) {
 
 function DemoForm(props) {
 
-    //const [ fields, setFields ] = useState([])
-
     useEffect(() => {
         const formInputs = document.querySelectorAll(".demoInput")
         const form = document.querySelector("#demo-form")
@@ -101,27 +99,6 @@ function DemoForm(props) {
         })
         
     }, [])
-
-
-    //function updateFields(e) {
-    //    const value = e.target.value
-    //    const input = e.target.name
-
-    //    let update;
-
-    //    if (fields.length > 0 ) {
-    //        if (!value) {
-    //            //const index = fields.indexOf(fields.forEach(field => { if (field.id === input) return field.id }))
-    //            //console.log(index)
-    //            update = fields.splice(1, null)
-    //        }
-    //        else update = [...fields, { id: input }]
-    //    }
-    //    else update = { id: input }
-    //    
-    //    console.log(update)
-    //    setFields([update])
-    //}
     
 
     return (
@@ -134,8 +111,7 @@ function DemoForm(props) {
                         delay={{ show: 250, hide: 400 }}
                         overlay={OverlayTooltip("Username here")}
                     >
-                        <Form.Control 
-                            //onChange={ e => updateFields(e) }
+                        <Form.Control
                             name="userId"
                             className="demoInput" 
                             type="text" 
@@ -160,10 +136,7 @@ function DemoForm(props) {
                         name="id-front"
                         className="demoInput" 
                         style={{display: "none"}}
-                        onChange={e => {
-                            //updateFields(e)
-                            displayFilename(e)
-                        }} 
+                        onChange={e => displayFilename(e)} 
                         type="file" 
                         placeholder="Image of the front of driver's license" 
                     />
@@ -186,10 +159,7 @@ function DemoForm(props) {
                         name="id-back" 
                         className="demoInput" 
                         style={{display: "none"}} 
-                        onChange={e => {
-                            //updateFields(e)
-                            displayFilename(e)
-                        }} 
+                        onChange={e => displayFilename(e)} 
                         type="file" 
                         placeholder="Image of the back of driver's license" 
                     />
