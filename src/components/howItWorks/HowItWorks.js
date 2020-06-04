@@ -148,8 +148,6 @@ export default function HowItWorks() {
         // section2Icons
         new ScrollMagic.Scene({
             triggerElement: ".iconContainer",
-            //triggerHook: 0,
-            //offset: 0,
             duration: "100%"
         })
         .setTween(section2Tween3)
@@ -172,8 +170,6 @@ export default function HowItWorks() {
     return (
         <section id="how-it-works-section">
             <div className="how-it-works-container">
-                
-                {/* <HowItWorksHeader /> */}
                 
                 <div className="howItWorksBackground">
 

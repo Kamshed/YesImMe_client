@@ -1,6 +1,5 @@
 /* ------------ main imports ------------ */
 import React, { useEffect } from 'react'
-import Header from '../howItWorks/header/HowItWorksHeader'
 
 
 /* ------------ other imports ------------ */
@@ -38,10 +37,6 @@ const features = [
 
 
 export default function Features() {
-
-    //const [ feature, setFeature ] = useState(features[0])
-
-    
     
     /* ---------- intersection observer ---------- */
     useEffect(() => {
@@ -76,10 +71,6 @@ export default function Features() {
         
     })
 
-    /* function displayFeature(e) {
-        setFeature(features[e.currentTarget.dataset.index])
-    } */
-
 
     return (
         <section id="features-section">
@@ -87,7 +78,6 @@ export default function Features() {
                 <h2 className="abs centered wht howItWorks">How it works</h2>
                 <img id="featuresImage" className="abs -one featureImage faceRecognition"/>
             </div>
-                {/* <Header /> */}
                 <div className="content-wrapper container content">
                     <h4 style={{ lineHeight: "3rem"}}>Using Yes I'm Me</h4>
                     <p> 
@@ -102,7 +92,7 @@ export default function Features() {
                 
                     {features.map((feature, i) => (
 
-                        <div key={i} data-index={i} /* onClick={e => displayFeature(e)} */ className="featureArticle">
+                        <div key={i} data-index={i} className="featureArticle">
                             <div className="featureImgContainer">
                                 {feature.src}
                             </div>
