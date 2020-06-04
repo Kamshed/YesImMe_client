@@ -130,8 +130,8 @@ export default function Demo(props) {
                         if (results || loading) {
                             return (
                                 <Modal.Footer>
-                                    <Button variant="secondary" onClick={ context.closeModal }>Close</Button>
-                                    <Button variant="primary" onClick={ () => reset() }>Reset</Button>
+                                    <Button type="button" variant="secondary" onClick={ context.closeModal }>Close</Button>
+                                    <Button type="button" variant="primary" onClick={ () => reset() }>Reset</Button>
                                 </Modal.Footer>
                             )
                         }

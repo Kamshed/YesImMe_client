@@ -58,7 +58,7 @@ export default function Home() {
                     Discrimination, Catfishing and Fake 
                     Accounts on your site and apps
                 </p>
-                <Button variant="outline-light" className="btn" onClick={ context.showModal }>try now</Button>
+                <Button type="button" variant="outline-light" className="btn" onClick={ context.showModal }>try now</Button>
             </header>
             </div>
         </section>

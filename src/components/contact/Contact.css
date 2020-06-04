@@ -44,4 +44,143 @@
           transform: translateX(-50%);
   margin-top: 5%;
 }
+
+/* svg animation */
+@-webkit-keyframes scaleAnimation {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes scaleAnimation {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes drawCircle {
+  0% {
+    stroke-dashoffset: 300px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawCircle {
+  0% {
+    stroke-dashoffset: 300px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes drawCheck {
+  0% {
+    stroke-dashoffset: 35px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawCheck {
+  0% {
+    stroke-dashoffset: 35px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes drawLine {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawLine {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#successAnimationCircle,
+#failureAnimationCircle {
+  stroke-dasharray: 300px 300px;
+  stroke: #005596;
+}
+
+#successAnimationCheck,
+#failureAnimationCheck {
+  stroke-dasharray: 35px 35px;
+  stroke: #005596;
+}
+
+#successAnimation.animated,
+#failureAnimation.animated {
+  -webkit-animation: 1s ease-out 0s 1 both scaleAnimation;
+          animation: 1s ease-out 0s 1 both scaleAnimation;
+}
+
+#successAnimation.animated #successAnimationCircle,
+#successAnimation.animated #failureAnimationCircle,
+#failureAnimation.animated #successAnimationCircle,
+#failureAnimation.animated #failureAnimationCircle {
+  -webkit-animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCircle;
+          animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCircle;
+}
+
+#successAnimation.animated #successAnimationCheck,
+#failureAnimation.animated #successAnimationCheck {
+  -webkit-animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCheck;
+          animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCheck;
+}
+
+#successAnimation.animated .failureAnimationCheckLine,
+#failureAnimation.animated .failureAnimationCheckLine {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  -webkit-animation: drawLine 1s cubic-bezier(1, 0.2, 0.1, 1) forwards;
+          animation: drawLine 1s cubic-bezier(1, 0.2, 0.1, 1) forwards;
+}
+
+#animate {
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  border: 0;
+  border-radius: 3px;
+  bottom: 100px;
+  color: #005596;
+  left: 50%;
+  outline: 0;
+  padding: 10px 30px;
+  position: absolute;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+#animate:active {
+  background: rgba(255, 255, 255, 0.1);
+}
 /*# sourceMappingURL=Contact.css.map */

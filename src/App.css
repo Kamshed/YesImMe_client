@@ -245,19 +245,19 @@ h6 {
 }
 
 .form-1 input::-webkit-input-placeholder, .form-1 input:focus::-webkit-input-placeholder, .form-1 textArea::-webkit-input-placeholder, .form-1 textArea:focus::-webkit-input-placeholder {
-  color: white;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .form-1 input:-ms-input-placeholder, .form-1 input:focus:-ms-input-placeholder, .form-1 textArea:-ms-input-placeholder, .form-1 textArea:focus:-ms-input-placeholder {
-  color: white;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .form-1 input::-ms-input-placeholder, .form-1 input:focus::-ms-input-placeholder, .form-1 textArea::-ms-input-placeholder, .form-1 textArea:focus::-ms-input-placeholder {
-  color: white;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .form-1 input::placeholder, .form-1 input:focus::placeholder, .form-1 textArea::placeholder, .form-1 textArea:focus::placeholder {
-  color: white;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .form-1 .btn {

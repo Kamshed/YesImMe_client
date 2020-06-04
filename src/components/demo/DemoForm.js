@@ -128,7 +128,7 @@ function DemoForm(props) {
                         overlay={OverlayTooltip("Front of id here")}
                     >
                         <div className="formInputFileUpload">
-                            <Button id="id-front" onClick={e => upload(e)}>Upload</Button>
+                            <Button typ="button" id="id-front" onClick={e => upload(e)}>Upload</Button>
                             <input onClick={e => upload(e)} data-src="id-front" placeholder="No file choosen"/>
                         </div>
                     </OverlayTrigger>
@@ -151,7 +151,7 @@ function DemoForm(props) {
                         overlay={OverlayTooltip("Back of id here")}
                     >
                         <div className="formInputFileUpload">
-                            <Button id="id-back" onClick={e => upload(e)}>Upload</Button>
+                            <Button typ="button" id="id-back" onClick={e => upload(e)}>Upload</Button>
                             <input onClick={e => upload(e)} data-src="id-back" placeholder="No file choosen"/>
                         </div>
                     </OverlayTrigger>
@@ -175,7 +175,7 @@ function DemoForm(props) {
                         overlay={OverlayTooltip("Close up image of user here")}
                     >
                         <div className="formInputFileUpload">
-                            <Button id="user-image" onClick={e => upload(e)}>Upload</Button>
+                            <Button typ="button" id="user-image" onClick={e => upload(e)}>Upload</Button>
                             <input onClick={e => upload(e)} data-src="user-image" placeholder="No file choosen"/>
                         </div>
                     </OverlayTrigger>

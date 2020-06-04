@@ -5,7 +5,7 @@ import DemoResults from './DemoResults'
 
 
 /* ------------ other imports ------------ */
-import { Spring } from 'react-spring/renderprops'
+//import { Spring } from 'react-spring/renderprops'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 
@@ -78,7 +78,7 @@ class DemoArea extends Component {
                         <p><b>Gender:</b>Male</p>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
+                        <Button type="button" variant="secondary" onClick={handleClose}>
                             Retry
                         </Button>
                     </Modal.Footer>
